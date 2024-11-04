@@ -126,3 +126,27 @@ const _first = prev('.second');
 
 //
 // console.log(first);
+
+/* ---------------- */
+const obj = {
+  name: 'tiger',
+  age: 42,
+};
+
+// const user1 = obj
+
+const settings = {
+  kindness: true,
+};
+
+// mixin pattern
+
+function a(object) {
+  const config = { ...object, ...settings };
+
+  config.name = '조수현';
+
+  console.log(config);
+}
+
+a(obj);
