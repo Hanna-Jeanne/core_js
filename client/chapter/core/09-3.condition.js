@@ -85,9 +85,9 @@ else if (thisTime === NIGHT) console.log('맛있는 점심을 먹는다');
 else if (thisTime === LATE_NIGHT || thisTime === DAWN)
   console.log('맛있는 점심을 먹는다');
 
-console.clear();
+/* switch vs. if -------------------------------------------------------- */
 
-/*-----------------------*/
+console.clear();
 
 // prompt를 통해 숫자를 입력 받는다. (0 ~ 6까지)
 // 받은 숫자를 사용해서 switch case 돌려주시면 됩니다.
@@ -174,5 +174,3 @@ function weekend() {
 }
 
 const day = weekend();
-
-/* switch vs. if -------------------------------------------------------- */
