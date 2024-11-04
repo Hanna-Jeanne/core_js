@@ -22,7 +22,9 @@ console.log(AorB);
 // a = a || b
 
 // 부정 연산자
-let reverseValue;
+let reverseValue = value;
+
+console.log(!reverseValue);
 
 // 조건 처리
 
@@ -32,6 +34,9 @@ let whichFalsy = true && ' ' && [] && { thisIsFalsy: false };
 // 첫번째 Truthy를 찾는 연산 (||)
 let whichTruthy = false || '' || [2, 3].length || { thisIsTruthy: true };
 
+console.clear();
+
+/* --------------------- */
 // 자바 인포 문제
 function login() {
   let userName = prompt('누구십니까?');
