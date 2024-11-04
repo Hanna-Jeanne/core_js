@@ -12,12 +12,19 @@
 // }
 
 // const result = prompt('숫자를 입력해주세요', 0);
-// if (result > 0) {
+// if(typeof result !== 'number'){
+//  // ... 실행 하지마!
+// }
+
+// if( result > 0 ){
 //   console.log(1);
-// } else if (result < 0) {
+
+// }else if( result < 0 ){
 //   console.log(-1);
-// } else if (result == 0) {
+
+// }else if( result == 0 ){
 //   console.log(0);
+
 // }
 
 let a = 1;
@@ -66,15 +73,6 @@ function watchingMovie() {
   }
 }
 
-let didWatchMovie = 'no';
-let goingToWatchMovie = 'yes';
-
-const msg = didWatchMovie.includes('yes')
-  ? '영화 재미있더라 한번 봐바'
-  : goingToWatchMovie.includes('yes')
-    ? '언제 볼까? 재미있겠다~'
-    : '그래...';
-
 // if 문(statement)
 
 // else 절(clause)
@@ -84,6 +82,16 @@ const msg = didWatchMovie.includes('yes')
 // 조건부 연산자
 
 // 멀티 조건부 연산자 식
+let didWatchMovie = 'no';
+let goingToWatchMovie = 'yes';
+
+const msg = didWatchMovie.includes('yes')
+  ? '영화 재미있더라 한번 봐바'
+  : goingToWatchMovie.includes('yes')
+    ? '언제 볼까? 재미있겠다~'
+    : '그래...';
+
+console.log(msg);
 
 // 삼항식 예시 - 참고!
 function render(node, isActive) {
