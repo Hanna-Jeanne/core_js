@@ -73,19 +73,18 @@ function rem(pxValue, base = 16) {
   return pxValue / base + 'rem';
 }
 
-console.assert(rem(20) === '1.25rem');
+console.assert(rem(20) === '1.25rem'); // 참이면 에러가 더이상 표시 되지 않음
 console.assert(rem('25px') === '1.5625rem');
 console.assert(rem('30px', 10) === '3rem');
 
 // css(node: string, prop: string, value: number|strung) : string;
-let css;
 
 // 객체 연산 표기법 2가지 => .연산 , [대괄효]
 
 const first = document.querySelector('.first');
 
 function setCss(node, prop, value) {
-  // $0.style.backgroundColor = 'orange'
+  // $0.style.backgroundColor = 'orange' // setter function
 
   if (typeof node === 'string') {
     node = document.querySelector(node);
@@ -99,10 +98,53 @@ function setCss(node, prop, value) {
   if (!value)
     throw new Error('setCss 함수의 세번째 인수는 필수 입력 값입니다.');
 
-  node.style[prop] = value;
+  node.style[prop] = value; // 객체는 키 값에 접근할 때, 대괄호 표기법을 써야지만 변수로 받을 수 있다.
 }
 
-setCss('.first', 'background', 'orange');
+// setCss('.first', 'background', 'orange'); // setCss 함수 실행
+
+/* ---------- */
+
+function getCss(node, prop) {
+  if (typeof node === 'string') {
+    node = document.querySelector(node);
+  }
+
+  if (!(prop in document.body.style)) {
+    throw new ReferenceError(
+      'getCss 함수의 두 번째 인수는 유효한 css 속성 이어야 합니다.'
+    );
+  }
+
+  // getComputedStyle($0).fontSize
+  return getComputedStyle(node)[prop];
+}
+
+const fontSize = getCss('.first', 'font-size');
+
+// console.log(fontSize);
+
+/* ------------ */
+
+function css(node, prop, value) {
+  // if (!value) {
+  //   return getCss(node, prop); // getter
+  // } else {
+  //   setCss(node, prop, value); // setter
+  // }
+
+  return !value ? getCss(node, prop) : setCss(node, prop, value); // 삼항식
+}
+
+const _css = (node, prop, value) =>
+  !value ? getCss(node, prop) : setCss(node, prop, value);
+
+console.log(css('.first', 'color')); // getter
+css('.first', 'color', 'red'); // setter
+
+// 함수 종류!!
+// setter function
+// getter function - 값을 가져오는 것, return이 필요
 
 // 함수를 만들기 위한 순서
 /*
