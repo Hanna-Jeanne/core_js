@@ -1,3 +1,5 @@
+/* global typeError */
+
 function getAttr(node, prop) {
   if (isString(node)) node = getNode(node);
 

@@ -71,9 +71,9 @@ function getGeolocation(success) {
   });
 }
 
-const geo = getGeolocation((data) => {
-  console.log(data);
-});
+// const geo = getGeolocation((data) => {
+//   console.log(data);
+// });
 // const geo = getGeolocation(({lat,long})=>{
 //   console.log( lat,long );
 // data 대신에 {lat,long} 객체를 바로 넣음

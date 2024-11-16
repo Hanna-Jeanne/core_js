@@ -34,7 +34,7 @@ console.log(about.hasAttribute('class'));
 
 // 2. class의 값을 가져와주세요.
 // console.log( about.getAttribute('class') );
-console.log(getAttr('.about', 'class'));
+// console.log(getAttr('.about', 'class')); // getAttr 함수 사용(/attr.js)
 
 // 3. id의 값을 어바웃으로 설정해주세요
 about.setAttribute('id', '어바웃');
