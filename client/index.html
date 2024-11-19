@@ -11,66 +11,27 @@
     <!-- gsap 코어 -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
-    <script src="./lib/error/typeError.js" defer></script>
-    <script src="./lib/error/syntaxError.js" defer></script>
-    <script src="./lib/error/refError.js" defer></script>
-    <script src="./lib/utils/type.js" defer></script>
-    <script src="./lib/dom/getNode.js" defer></script>
-    <script src="./lib/dom/insert.js" defer></script>
-    <script src="./lib/dom/css.js" defer></script>
-    <script src="./lib/dom/attr.js" defer></script>
+    <script src="./main.js" type="module"></script>
 
-    <script src="./chapter/dom/07.event.js" defer></script>
     <!-- defer를 넣으면 스크립트가 body 위에 존재재도, html을 계속 읽으면서 스크립트를 읽고 스크립트 실행은 가장 마지막에 한다. -->
   </head>
   <body>
-    <h1>
-      <span class="first">core</span>
-      <span class="second">javascript</span>
-      <button type="button">CTA</button>
-    </h1>
-
-    <nav>
-      <ul>
-        <li class="about" data-name="about">
-          😉
-          <span>ABOUT</span>
-        </li>
-        <li class="home" data-name="home">
-          🏠
-          <span>HOME</span>
-        </li>
-        <li class="contact" data-name="contact">
-          📞
-          <span>CONTACT</span>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="ground">
-      <div class="ball">
-        <img src="https://en.js.cx/clipart/ball.svg" alt="축구공" />
+    <form class="calculator">
+      <div class="first">
+        <label for="firstNumber">First Value</label>
+        <input type="number" name="first" id="firstNumber" required />
       </div>
-    </div>
 
-    <input type="text" />
+      <div class="operator">+</div>
 
-    <!-- <video autoplay id="videoElement"></video> -->
+      <div class="second">
+        <label for="secondNumber">Second Value</label>
+        <input type="number" name="second" id="secondNumber" required />
+      </div>
 
-    <!-- <ul></ul> -->
+      <input id="clear" type="submit" value="clear" />
 
-    <!-- <div class="space">
-      <div class="dot"></div>
-      <div class="circle"></div>
-    </div> -->
-
-    <!-- <div>
-      <input type="text" class="todo" />
-      <button type="button" class="btn">등록</button>
-
-      <ul class="todoList"></ul>
-    </div> -->
-
-    <!-- <button class="btn">CTA</button> -->
+      <div class="result">-</div>
+    </form>
   </body>
 </html>
