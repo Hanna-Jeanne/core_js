@@ -17,26 +17,65 @@ import {
 } from './lib/index.js';
 
 //
-// 1. input 선택하기
-// 2. input 이벤트 바인딩
-// 3. input의 value 값 가져오기
-// 4. 숫자 더하기
-// 5. result에 출력하기
 
-const first = $('#firstNumber');
-const second = $('#secondNumber');
-const result = $('.result');
+function phase1() {
+  // 1. input 선택하기
+  // 2. input 이벤트 바인딩
+  // 3. input의 value 값 가져오기
+  // 4. 숫자 더하기
+  // 5. result에 출력하기
 
-function handleInput(e) {
-  const firstValue = Number(first.value);
-  const secondValue = +second.value;
-  const total = firstValue + secondValue;
+  const first = $('#firstNumber');
+  const second = $('#secondNumber');
+  const result = $('.result');
+  const clear = $('#clear');
 
-  // result.textContent = '';
-  clearContents(result);
+  function handleInput() {
+    const firstValue = Number(first.value);
+    const secondValue = +second.value;
+    const total = firstValue + secondValue;
 
-  insertLast(result, total);
+    // result.textContent = '';
+    clearContents(result);
+
+    insertLast(result, total);
+  }
+
+  function handleClear(e) {
+    e.preventDefault();
+
+    clearContents(first);
+    clearContents(second);
+
+    result.textContent = '';
+  }
+
+  first.addEventListener('input', handleInput);
+  second.addEventListener('input', handleInput);
+  clear.addEventListener('click', handleClear);
 }
 
-first.addEventListener('input', handleInput);
-second.addEventListener('input', handleInput);
+function phase2() {
+  const calculator = $('.calculator');
+  const result = $('.result');
+  const clear = $('#clear');
+  const numberInputs = [document.querySelectorAll('input:not(#clear)')];
+
+  function handleInput() {
+    // input의 값은 모두 문자형이다 -> 넘버로 바꿔줌
+    const total = numberInputs.reduce((acc, cur) => acc + Number(cur.value), 0);
+
+    clearContents(result);
+    insertLast(result, total);
+  }
+
+  function handleClear(e) {
+    e.preventDefault();
+
+    numberInputs.forEach(clearContents);
+    result.textContent = '';
+  }
+
+  calculator.addEventListener('input', handleInput);
+  calculator.addEventListener('click', handleClear);
+}
