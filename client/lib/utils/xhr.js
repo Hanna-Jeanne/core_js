@@ -223,7 +223,7 @@ const defaultOptions = {
 };
 
 //
-function xhrPromise(options = {}) {
+export function xhrPromise(options = {}) {
   const { method, url, errorMessage, body, headers } = {
     ...defaultOptions,
     ...options,
@@ -278,21 +278,21 @@ xhrPromise.post = (url, body) => xhrPromise({ url, body, method: 'POST' });
 xhrPromise.put = (url, body) => xhrPromise({ url, body, method: 'PUT' });
 xhrPromise.delete = (url) => xhrPromise({ url, method: 'DELETE' });
 
-xhrPromise
-  .get(END_POINT)
-  .then((res) => {
-    console.log(res);
+// xhrPromise
+//   .get(END_POINT)
+//   .then((res) => {
+//     console.log(res);
 
-    res.forEach(({ website }) => {
-      const tag = `
-        <div>site : ${website}</div>
-      `;
+//     res.forEach(({ website }) => {
+//       const tag = `
+//         <div>site : ${website}</div>
+//       `;
 
-      document.body.insertAdjacentHTML('beforeend', tag);
-    });
-  })
-  .then(() => {})
-  .catch(() => {});
+//       document.body.insertAdjacentHTML('beforeend', tag);
+//     });
+//   })
+//   .then(() => {})
+//   .catch(() => {});
 
 // xhrPromise.put()
 // xhrPromise.delete()
@@ -405,24 +405,24 @@ xhrPromise
 
 /* ------------------------------------------------ */
 /*                함수를 매서드처럼 사용 🌟               */
-/* ------------------------------------------------ */
-function num(a, b, value) {
-  return a + value + b;
-}
+// /* ------------------------------------------------ */
+// function num(a, b, value) {
+//   return a + value + b;
+// }
 
-num.multi = (a, b) => {
-  return num(a, b, '곱하기');
-};
+// num.multi = (a, b) => {
+//   return num(a, b, '곱하기');
+// };
 
-num.division = (a, b) => {
-  return num(a, b, '나누기');
-};
+// num.division = (a, b) => {
+//   return num(a, b, '나누기');
+// };
 
-const p = new Promise((f, c) => {
-  f('a');
-});
+// const p = new Promise((f, c) => {
+//   f('a');
+// });
 
-console.log(num.multi(2, 3));
-console.log(num.division(10, 5));
+// console.log(num.multi(2, 3));
+// console.log(num.division(10, 5));
 
-console.log(num(1, 2, '더하기'));
+// console.log(num(1, 2, '더하기'));
