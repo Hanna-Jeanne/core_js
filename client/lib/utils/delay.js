@@ -50,7 +50,7 @@ const defaultOptions = {
   timeout: 1000,
 };
 
-function delayP(options) {
+export function delayP(options) {
   let config = { ...defaultOptions }; // 재할당을 하기 위해 let을 사용
 
   if (isNumber(options)) {
