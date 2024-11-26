@@ -1,27 +1,20 @@
-.container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0.2rem;
-  gap: 0.5rem;
+/* 예제 */
 
-  & textarea {
-    resize: none;
-  }
+/* @import url('./theme.css');
 
-  & button {
-    flex: 1;
-    width: 100%;
-    border: none;
-    background: dodgerblue;
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    cursor: pointer;
-  }
+
+.box{
+@@ -7,11 +8,11 @@
+
+
+.card{
+  background-color: dodgerblue;
+  background-color: var(--primary);
 }
+
+
+p{
+  background-color: red;
+  background-color: var(--secondary);
+  font-size: 2rem;
+} */
