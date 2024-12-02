@@ -11,6 +11,8 @@ class TodoList extends LitElement {
 
   constructor() {
     super();
+
+    // 이 부분 한번만 더 물어보기!!
     this.todoItems = JSON.parse(localStorage.getItem("todo")) || [];
   }
 
@@ -40,7 +42,7 @@ class TodoList extends LitElement {
       <div class="container">
         <h1>TO DO LIST</h1>
         <ul class="todo">
-          ${this.todoItems.map((item) => html/* html */ ` <todo-item .id=${item.id} .value=${item.value} .checked=${item.checked} @update=${(e) => this.handleUpdate(item.id, e.detail)} @delete=${() => this.handleDelete(item.id)}></todo-item> `)}
+          ${this.todoItems.map((item) => html/* html */ ` <todo-item .id=${item.id} .value=${item.value} .checked=${item.checked} @update=${(e) => this.handleUpdate(item.id, e.detail)} @delete=${() => this.handleDelete(item.id)}> </todo-item> `)}
         </ul>
 
         <button type="button" class="add-item" @click=${this.handleAddItem}>+</button>
