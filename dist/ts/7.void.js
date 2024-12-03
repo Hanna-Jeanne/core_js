@@ -25,3 +25,11 @@ function* gen() {
     }
 }
 export {};
+/*
+
+  Generator<T,R,P>
+  T: yield 반환되는 값의 타입
+  R: 함수에서 반환하는 값의 타입
+  P: next() 메서드에서 전달되는 값의 타입
+
+*/
