@@ -5,6 +5,8 @@ import { Product } from "../@types/type";
 import { getPbimageURL } from "../api/getPbimageURL";
 import gsap from "gsap";
 
+console.log("dk");
+
 @customElement("product-list")
 class ProductList extends LitElement {
   @property({ type: Object }) data: Product = {
