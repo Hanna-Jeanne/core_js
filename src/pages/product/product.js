@@ -1,4 +1,4 @@
-import { getPbimageURL } from "@/api/getPbimageURL";
+import { getPbImageURL } from "@/api/getPbImageURL";
 
 // vite 환경에서 .env 파일이 관리하는 환경 변수
 console.log(import.meta.env.VITE_PB_URL);
@@ -19,7 +19,7 @@ async function renderProduct() {
               <li>
                 <a href="/">
                   <figure>
-                    <img src="${getPbimageURL(item)}" alt="" />
+                    <img src="${getPbImageURL(item)}" alt="" />
                   </figure>
                   <span class="brand">${item.brand}</span>
                   <span class="description">${item.description}</span>
